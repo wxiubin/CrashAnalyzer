@@ -197,7 +197,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="467" height="243"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView editable="NO" verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" selectionGranularity="word" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" smartInsertDelete="YES" id="F5a-o9-VJG">
+                                        <textView editable="NO" verticallyResizable="YES" selectionGranularity="word" findStyle="bar" allowsDocumentBackgroundColorChange="YES" smartInsertDelete="YES" id="F5a-o9-VJG">
                                             <rect key="frame" x="0.0" y="0.0" width="467" height="243"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
