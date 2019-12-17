@@ -14,13 +14,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5CC64A7A23A7877F000746CF /* crasher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crasher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CC64A7A23A7877F000746CF /* CrashAnalyzer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrashAnalyzer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC64A7D23A7877F000746CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CC64A7F23A7877F000746CF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5CC64A8123A78781000746CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CC64A8423A78781000746CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CC64A8623A78781000746CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5CC64A8723A78781000746CF /* crasher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = crasher.entitlements; sourceTree = "<group>"; };
+		5CC64A8723A78781000746CF /* CrasherAnalyzer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CrasherAnalyzer.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +37,7 @@
 		5CC64A7123A7877F000746CF = {
 			isa = PBXGroup;
 			children = (
-				5CC64A7C23A7877F000746CF /* crasher */,
+				5CC64A7C23A7877F000746CF /* CrashAnalyzer */,
 				5CC64A7B23A7877F000746CF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,12 +45,12 @@
 		5CC64A7B23A7877F000746CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CC64A7A23A7877F000746CF /* crasher.app */,
+				5CC64A7A23A7877F000746CF /* CrashAnalyzer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5CC64A7C23A7877F000746CF /* crasher */ = {
+		5CC64A7C23A7877F000746CF /* CrashAnalyzer */ = {
 			isa = PBXGroup;
 			children = (
 				5CC64A7D23A7877F000746CF /* AppDelegate.swift */,
@@ -58,17 +58,17 @@
 				5CC64A8123A78781000746CF /* Assets.xcassets */,
 				5CC64A8323A78781000746CF /* Main.storyboard */,
 				5CC64A8623A78781000746CF /* Info.plist */,
-				5CC64A8723A78781000746CF /* crasher.entitlements */,
+				5CC64A8723A78781000746CF /* CrasherAnalyzer.entitlements */,
 			);
-			path = crasher;
+			path = CrashAnalyzer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5CC64A7923A7877F000746CF /* crasher */ = {
+		5CC64A7923A7877F000746CF /* CrashAnalyzer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CC64A8A23A78781000746CF /* Build configuration list for PBXNativeTarget "crasher" */;
+			buildConfigurationList = 5CC64A8A23A78781000746CF /* Build configuration list for PBXNativeTarget "CrashAnalyzer" */;
 			buildPhases = (
 				5CC64A7623A7877F000746CF /* Sources */,
 				5CC64A7723A7877F000746CF /* Frameworks */,
@@ -78,9 +78,9 @@
 			);
 			dependencies = (
 			);
-			name = crasher;
+			name = CrashAnalyzer;
 			productName = crasher;
-			productReference = 5CC64A7A23A7877F000746CF /* crasher.app */;
+			productReference = 5CC64A7A23A7877F000746CF /* CrashAnalyzer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -98,7 +98,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5CC64A7523A7877F000746CF /* Build configuration list for PBXProject "crasher" */;
+			buildConfigurationList = 5CC64A7523A7877F000746CF /* Build configuration list for PBXProject "CrashAnalyzer" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -111,7 +111,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5CC64A7923A7877F000746CF /* crasher */,
+				5CC64A7923A7877F000746CF /* CrashAnalyzer */,
 			);
 		};
 /* End PBXProject section */
@@ -269,15 +269,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = crasher/crasher.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CrashAnalyzer/crasher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = crasher/Info.plist;
+				INFOPLIST_FILE = CrashAnalyzer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = iosgg.crasher;
+				PRODUCT_BUNDLE_IDENTIFIER = iosgg.CrashAnalyzer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -287,15 +287,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = crasher/crasher.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CrashAnalyzer/crasher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = crasher/Info.plist;
+				INFOPLIST_FILE = CrashAnalyzer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = iosgg.crasher;
+				PRODUCT_BUNDLE_IDENTIFIER = iosgg.CrashAnalyzer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -304,7 +304,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5CC64A7523A7877F000746CF /* Build configuration list for PBXProject "crasher" */ = {
+		5CC64A7523A7877F000746CF /* Build configuration list for PBXProject "CrashAnalyzer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CC64A8823A78781000746CF /* Debug */,
@@ -313,7 +313,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CC64A8A23A78781000746CF /* Build configuration list for PBXNativeTarget "crasher" */ = {
+		5CC64A8A23A78781000746CF /* Build configuration list for PBXNativeTarget "CrashAnalyzer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CC64A8B23A78781000746CF /* Debug */,

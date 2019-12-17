@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5CC64A7923A7877F000746CF"
-               BuildableName = "crasher.app"
-               BlueprintName = "crasher"
-               ReferencedContainer = "container:crasher.xcodeproj">
+               BuildableName = "CrashAnalyzer.app"
+               BlueprintName = "CrashAnalyzer"
+               ReferencedContainer = "container:CrashAnalyzer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5CC64A7923A7877F000746CF"
-            BuildableName = "crasher.app"
-            BlueprintName = "crasher"
-            ReferencedContainer = "container:crasher.xcodeproj">
+            BuildableName = "CrashAnalyzer.app"
+            BlueprintName = "CrashAnalyzer"
+            ReferencedContainer = "container:CrashAnalyzer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5CC64A7923A7877F000746CF"
-            BuildableName = "crasher.app"
-            BlueprintName = "crasher"
-            ReferencedContainer = "container:crasher.xcodeproj">
+            BuildableName = "CrashAnalyzer.app"
+            BlueprintName = "CrashAnalyzer"
+            ReferencedContainer = "container:CrashAnalyzer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
