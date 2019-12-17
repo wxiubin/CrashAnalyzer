@@ -10,29 +10,17 @@ import Cocoa
 
 class MainViewController: NSViewController, NSTextFieldDelegate {
     
-    @IBOutlet private weak var logFileTextField: NSTextField!
+    @IBOutlet private weak var crashTextField: NSTextField!
     @IBOutlet private weak var dsymTextField: NSTextField!
     
-    @IBOutlet private weak var parserButton: NSButton!
+    @IBOutlet private weak var analyzeButton: NSButton!
     
-    @IBOutlet private weak var resultView: NSScrollView!
-    
-    var logFielPath: String? {
-        didSet {
-            logFileTextField.stringValue = logFielPath ?? ""
-        }
-    }
-    
-    var dsymPath: String? {
-        didSet {
-            dsymTextField.stringValue = dsymPath ?? ""
-        }
-    }
+    @IBOutlet private weak var resultView: NSTextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        _setupTextField(logFileTextField)
+        _setupTextField(crashTextField)
         _setupTextField(dsymTextField)
     }
     
@@ -44,15 +32,15 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         
         let click = NSClickGestureRecognizer()
         click.target = self
-        click.action = Selector(("_clicked:"))
+        click.action = Selector(("_clickedTextField:"))
         textField.addGestureRecognizer(click)
     }
     
-    @IBAction func _clicked(_ sender: NSClickGestureRecognizer) {
+    @IBAction func _clickedTextField(_ sender: NSClickGestureRecognizer) {
         
-        let isLogFile = sender.view == logFileTextField
+        let isLogFile = sender.view == crashTextField
         
-        let textField = isLogFile ? logFileTextField : dsymTextField
+        let textField = isLogFile ? crashTextField : dsymTextField
         
         
         let openChannel = NSOpenPanel()
@@ -71,10 +59,21 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         }
     }
     
-    @IBAction func _parse(_ sender: NSButton) {
-    
+    @IBAction func _analyze(_ sender: NSButton) {
+        
+        let crashPath = crashTextField.stringValue ;
+        let dsymPath = dsymTextField.stringValue ;
+        if crashPath.isEmpty || dsymPath.isEmpty {
+            resultView.string = "请选择日志文件和符号表"
+            return
+        }
+        let crashUrl = URL(string: crashPath)
+        let dsymUrl = URL(string: dsymPath)
+        let result = Analyzer().analyze(dsym: dsymUrl!.path, crash: crashUrl!.path)
+        resultView.string = result
     }
     
+    // 禁止手动输入
     func control(_ control: NSControl, textShouldBeginEditing fieldEditor: NSText) -> Bool {
         return false;
     }

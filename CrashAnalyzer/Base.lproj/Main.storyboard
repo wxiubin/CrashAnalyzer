@@ -146,7 +146,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="CrashAnalyzer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -197,11 +197,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="467" height="243"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" smartInsertDelete="YES" id="F5a-o9-VJG">
+                                        <textView editable="NO" verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" selectionGranularity="word" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" smartInsertDelete="YES" id="F5a-o9-VJG">
                                             <rect key="frame" x="0.0" y="0.0" width="467" height="243"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <size key="minSize" width="467" height="243"/>
                                             <size key="maxSize" width="467" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -228,7 +228,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="_parse:" target="XfG-lQ-9wD" id="K8L-LW-Fnh"/>
+                                    <action selector="_analyze:" target="XfG-lQ-9wD" id="6tD-AY-Y1k"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -250,10 +250,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="analyzeButton" destination="ggs-vw-WjT" id="Tm3-4X-Fpp"/>
+                        <outlet property="crashTextField" destination="0uJ-5Z-Fr4" id="MwU-eh-aOQ"/>
                         <outlet property="dsymTextField" destination="3TL-lV-dI8" id="od5-ut-335"/>
-                        <outlet property="logFileTextField" destination="0uJ-5Z-Fr4" id="J6o-7W-SW4"/>
-                        <outlet property="parserButton" destination="ggs-vw-WjT" id="Ywm-TD-B79"/>
-                        <outlet property="resultView" destination="d5F-c3-eWh" id="6Hb-H5-LLk"/>
+                        <outlet property="resultView" destination="F5a-o9-VJG" id="Q0s-0C-e76"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
