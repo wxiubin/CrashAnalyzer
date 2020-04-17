@@ -17,6 +17,21 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
     
     @IBOutlet private weak var resultView: NSTextView!
     
+    @IBOutlet weak var indicator: NSProgressIndicator!
+    
+    var isAnalyzing = false {
+        didSet {
+            analyzeButton.isEnabled = !isAnalyzing
+            indicator.isHidden = !isAnalyzing
+            if isAnalyzing {
+                indicator.startAnimation(nil)
+            } else {
+                indicator.stopAnimation(nil)
+            }
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,19 +47,16 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         
         let click = NSClickGestureRecognizer()
         click.target = self
-        click.action = Selector(("_clickedTextField:"))
+        click.action = #selector(self._clickedTextField(_:))
         textField.addGestureRecognizer(click)
     }
     
-    @IBAction func _clickedTextField(_ sender: NSClickGestureRecognizer) {
+    func _openFileChannel(_ islog: Bool) -> Void {
         
-        let isLogFile = sender.view == crashTextField
-        
-        let textField = isLogFile ? crashTextField : dsymTextField
-        
+        let textField = islog ? crashTextField : dsymTextField
         
         let openChannel = NSOpenPanel()
-        openChannel.title = isLogFile ? "选择日志文件" : "选择符号表文件"
+        openChannel.title = islog ? "选择日志文件" : "选择符号表文件"
         openChannel.begin { (respone) in
             if respone.rawValue == 0 {
                 print("取消选择");
@@ -59,7 +71,22 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         }
     }
     
+    @IBAction func _selectDSYM(_ sender: Any) {
+        _openFileChannel(false)
+    }
+    @IBAction func _selectFile(_ sender: Any) {
+        _openFileChannel(true)
+    }
+    @IBAction func _clickedTextField(_ sender: NSClickGestureRecognizer) {
+        _openFileChannel(sender.view == crashTextField)
+    }
+    
     @IBAction func _analyze(_ sender: NSButton) {
+        
+        if isAnalyzing {
+            return
+        }
+        isAnalyzing = true
         
         let crashPath = crashTextField.stringValue ;
         let dsymPath = dsymTextField.stringValue ;
@@ -69,8 +96,13 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         }
         let crashUrl = URL(string: crashPath)
         let dsymUrl = URL(string: dsymPath)
-        let result = Analyzer().analyze(dsym: dsymUrl!.path, crash: crashUrl!.path)
-        resultView.string = result
+        Dispatch.DispatchQueue.global().async {
+            let result = Analyzer().analyze(dsym: dsymUrl!.path, crash: crashUrl!.path)
+            DispatchQueue.main.async {
+                self.resultView.string = result
+                self.isAnalyzing = false
+            }
+        }
     }
     
     // 禁止手动输入
