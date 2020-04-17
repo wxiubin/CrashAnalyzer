@@ -97,7 +97,7 @@ class MainViewController: NSViewController, NSTextFieldDelegate {
         let crashUrl = URL(string: crashPath)
         let dsymUrl = URL(string: dsymPath)
         Dispatch.DispatchQueue.global().async {
-            let result = Analyzer().analyze(dsym: dsymUrl!.path, crash: crashUrl!.path)
+            let result = Analyzer.analyzer.analyze(dsym: dsymUrl!.path, crash: crashUrl!.path)
             DispatchQueue.main.async {
                 self.resultView.string = result
                 self.isAnalyzing = false

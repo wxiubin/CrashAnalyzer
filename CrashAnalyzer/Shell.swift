@@ -8,11 +8,11 @@
 
 import Foundation
 
-func shell(launchPath: String, arguments: [String], environment: [String : String]) -> String
+func excute(launchPath: String, command: String, environment: [String : String]?) -> String
 {
     let task = Process()
     task.launchPath = launchPath
-    task.arguments = arguments
+    task.arguments = ["-c", command]
     task.environment = environment
     
     let pipe = Pipe()
